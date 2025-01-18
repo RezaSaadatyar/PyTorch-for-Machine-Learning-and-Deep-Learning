@@ -9,7 +9,7 @@
 **6️⃣ Special Arrays**<br/>
 **7️⃣ Random Arrays**<br/>
 **8️⃣ Indexing & Slicing**<br/>
-**9️⃣ Unsqueeze & unsqueeze**<br/>
+**9️⃣ Unsqueeze & squeeze**<br/>
 **🔟 PyTorch tensors & NumPy**
 
 ----
