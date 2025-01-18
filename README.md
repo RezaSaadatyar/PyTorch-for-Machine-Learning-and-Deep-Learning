@@ -19,7 +19,7 @@
 **2️⃣ Load data**<br/>
 **3️⃣ Data Cleaning**<br/>
 **4️⃣ Encoding Categorical Variables**<br/>
-**5️⃣ Imbalanced Data**<br/>
+**5️⃣ Imbalance Data**<br/>
 **6️⃣ Feature Extraction**<br/>
 **7️⃣ Feature Selection**<br/>
 **8️⃣ Split data into training, Validation and test sets**<br/>
