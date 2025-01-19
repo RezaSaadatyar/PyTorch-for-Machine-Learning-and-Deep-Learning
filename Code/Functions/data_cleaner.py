@@ -12,6 +12,25 @@ from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 class MissingData:
     
     def __init__(self, dataset: Union[pd.DataFrame, np.ndarray]) -> None:
+        """
+        Initialize the MissingData class.
+
+        Parameters:
+        - dataset (Union[pd.DataFrame, np.ndarray]): Input dataset as a pandas DataFrame or NumPy array.
+        
+        Import module:
+        - from Functions.data_cleaner import MissingData
+        
+        Example:
+        - obj_miss = MissingData(data)
+           1. data_clean = obj_miss.fill_mode()        # Fill missing values using mode
+           2. data_clean = obj_miss.fill_knn()         # Fill missing values using K-Nearest Neighbors
+           3. data_clean = obj_miss.fill_mean()        # Fill missing values using the mean
+           4. data_clean = obj_miss.fill_median()      # Fill missing values using the median
+           5. data_clean = obj_miss.fill_forward()     # Fill missing values using forward fill
+           6. data_clean = obj_miss.fill_backward()    # Fill missing values using backward fill
+           7. data_clean = obj_miss.fill_interpolate() # Fill missing values using interpolation
+        """
         
         if isinstance(dataset, np.ndarray): # Convert numpy array to DataFrame
             self.data = pd.DataFrame(dataset)
@@ -154,9 +173,21 @@ class OutlierData:
     def __init__(self, dataset: Union[pd.DataFrame, np.ndarray], column: str = None) -> None:
         """
         Initialize the OutlierData class.
+        
         Parameters:
         - dataset: Input data as a pandas DataFrame or NumPy array.
         - column: The column to analyze if `dataset` is a DataFrame. Defaults to None.
+        
+        Import module:
+        - from Functions.data_cleaner import OutlierData
+        - from Functions.plot_outlier import plot_outlier
+        
+        Example:
+        - obj_outliers = OutlierData(data_clean, column=None)
+          1. data_outlier = obj_outliers.zscore(value_thr=2, threshold_active="on") # Detect outliers using the zscore method 
+          2. data_outlier = obj_outliers.iqr(iqr_k=1.5)  # Detect outliers using the IQR method
+          - plot_outlier(data_clean, title="Feature distribution without applying outlier methods", figsize=(10, 2.5))
+          - plot_outlier(data_outlier, title="Feature distribution using IQR method", figsize=(10, 2.5))
         """
         if isinstance(dataset, np.ndarray):  # Convert NumPy array to DataFrame
             self.data = pd.DataFrame(dataset)

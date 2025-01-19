@@ -13,6 +13,13 @@ class ImbalanceData:
         Args:
             dataset (np.ndarray): The feature matrix (n_samples, n_features).
             labels (np.ndarray): The target labels (n_samples,).
+        
+        Import module:
+        - from Functions.imbalance_data import ImbalanceData
+   
+        Example:
+        - obj_imb = ImbalanceData(dataset=x, labels=y)
+          - data, labels = obj_imb.balance_data
         """
         self.dataset = np.array(dataset) if not isinstance(dataset, np.ndarray) else dataset
         self.labels = np.array(labels) if not isinstance(labels, np.ndarray) else labels

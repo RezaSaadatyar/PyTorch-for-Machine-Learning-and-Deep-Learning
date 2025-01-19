@@ -26,6 +26,12 @@ def data_normalization(data_train: np.ndarray, data_test: np.ndarray, data_valid
         The normalized testing dataset.
     - data_valid_norm: array-like or None
         The normalized validation dataset, if provided.
+
+    Import module:
+    - from Functions.data_normalization import data_normalization
+
+    Example:
+    - X_train, X_test, X_valid = data_normalization(x_train, x_test, x_valid, method="StandardScaler")
     """
     # Reshape data if necessary
     data_train = data_train.reshape(-1, 1) if data_train.ndim == 1 else data_train

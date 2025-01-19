@@ -67,6 +67,17 @@ class FilterMethods(FeatureSelection): # Define the FilterMethods class, which i
             iii. Mutual Information: Select features based on mutual information with class labels.
             iv. Univariate Feature Selection: Select top k features using chi-squared test.
             v. Fisher Score: Select top features based on Fisher score.
+            
+        Import module:
+        - from Functions.ml_feature_selection import FilterMethods
+
+        Example:
+        - filt_methods = FilterMethods(x, y, display_figure="on")
+           1. out = filt_methods.Variance(threshold=2) # Variance Thresholding
+           2. out = filt_methods.ANOVA(num_features=4) # ANOVA
+           3. out = filt_methods.MutualInformation(num_features=4, num_neighbors=5) # Mutual Information
+           4. out = filt_methods.UnivariateFeatureSelection(num_features=4) # Univariate Feature Selection to select top features using chi-squared test
+           5. out = filt_methods.FisherScore(num_features=4) # Fisher Score          
         """
         super().__init__(dataset, label, display_figure, figsize) # Call the parent class constructor
 
@@ -182,6 +193,15 @@ class WrapperMethods(FeatureSelection): # Define the WrapperMethods class, which
             i. Recursive Feature Elimination (RFE): Select features recursively using logistic regression.
             ii. Forward Feature Selection (FFS): Select features forwardly based on logistic regression.
             iii. Backward Feature Selection (BFS): Select features backwardly based on logistic regression.
+
+        Import module:
+        - from Functions.ml_feature_selection import WrapperMethods
+
+        Example:
+        - wrap_methods = WrapperMethods(x, y, display_figure="on")
+          1. out = wrap_methods.RecursiveFeatureElimination(num_features=4, max_iter=10000) # Recursive Feature Elimination
+          2. out = wrap_methods.SequentialFeatureSelection(num_features=4, max_iter=10000, direction="forward") # Forward Feature Selection
+          3. out = wrap_methods.SequentialFeatureSelection(num_features=4, max_iter=10000, direction="backward") # Backward Feature Selection
         """
         super().__init__(dataset, label, display_figure, figsize) # Call the parent class constructor
 
@@ -245,6 +265,15 @@ class EmbeddedMethods(FeatureSelection): # Define the EmbeddedMethods class, whi
             i. Random Forest: Select top features based on random forest feature importances.
             ii. L1-based Feature Selection: Select features based on linear SVM with L1 regularization.
             iii. Tree-based Feature Selection: Select top features based on extra trees classifier.
+            
+        Import module:
+        - from Functions.ml_feature_selection import EmbeddedMethods
+
+        Example:
+        - embed_methods = EmbeddedMethods(x, y, display_figure="on")
+           1. out = embed_methods.RandomForest(num_features=3, n_estimators=10) # Random Forest
+           2. out = embed_methods.L1(L1_Parameter=0.5, max_iter=40000)          # L1-based feature selection
+           3. out = embed_methods.TreeFeatureSelection(num_features=3, n_estimators=100)  # Tree-based feature selection
         """
         super().__init__(dataset, label, display_figure, figsize) # Call the parent class constructor
 

@@ -12,10 +12,22 @@ class FilePathExtractor:
     def __init__(self, directory_path: str, format_type: str) -> None:
         """
         Initialize the FilePathExtractor with a directory path and file format.
-
-        :param directory_path: Path to the directory to scan for files.
-        :param format_type: File format (extension) to filter files, e.g., ".tif".
-        """  
+        
+        Parameters:
+        - directory_path: Path to the directory to scan for files.
+        - format_type: File format (extension) to filter files, e.g., ".tif".
+        
+        Import module:
+        - from Functions.filepath_extractor import FilePathExtractor
+        
+        Example:
+        - obj = FilePathExtractor(file_path, "csv")
+          1. file_names = obj.filenames          # List of filenames in the directory with the specified extension
+          2. folder = obj.folder_paths           # List of folder paths where the files are located
+          3. file_paths = obj.all_file_paths     # List of full file paths for the files
+          4. subfoldernames = obj.subfoldernames # List of subfolder names within the directory
+        """
+        
         # Initialize class attributes      
         self.files: list[str] = [] # Stores the names of all files matching the specified format.
         self.full_path: list[str] = [] # Stores the full paths of all matching files.

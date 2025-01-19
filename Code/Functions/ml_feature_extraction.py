@@ -14,6 +14,18 @@ class FeatureExtraction:
         - data: Input feature matrix of shape (n_samples, n_features).
         - labels: Target labels of shape (n_samples,).
         - display_figure: Whether to display the plot ("on" or "off"). Defaults to "off".
+        
+        Import module:
+        - from Functions.ml_feature_extraction import FeatureExtraction
+        
+        Example:
+        - obj_feature = FeatureExtraction(x, y, display_figure="on")
+          1. out = obj_feature.PCA(num_features=3, kernel="linear")     # Principal Component Analysis (PCA)
+          2. out = obj_feature.LDA(solver="svd")                        # Linear Discriminant Analysis (LDA)
+          3. out = obj_feature.ICA(num_features=4, max_iter=200)        # Independent Component Analysis (ICA)
+          4. out = obj_feature.TSNE(num_features=3, perplexity=10, learning_rate="auto", max_iter=250) # t-SNE
+          5. out = obj_feature.FA(num_features=3, max_iter=200)         # Factor Analysis (FA)
+          6. out = obj_feature.Isomap(num_features=3, num_neighbors=20) # Isometric Mapping (Isomap)
         """
         # Initialize class attributes
         self.data = dataset
